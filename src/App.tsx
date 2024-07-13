@@ -1,9 +1,9 @@
-import Home from "./components/organism/Home";
+import Routing from "./components/layout/Routing";
 
 const App = () => {
   return (
     <div className="w-screen h-screen font-Pretendard">
-      <Home />
+      <Routing />
     </div>
   );
 };
