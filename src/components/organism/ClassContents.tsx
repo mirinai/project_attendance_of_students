@@ -19,6 +19,7 @@ const ClassContents = ({
   return (
     <div className="flex flex-col items-center">
       <div className="text-3xl text-center my-10">수업명</div>
+
       <div className="px-80 flex gap-10 mb-10">
         {/* 수업횟수 */}
         <div className="w-96 h-fit p-5 bg-slate-100">
@@ -43,6 +44,10 @@ const ClassContents = ({
           <Slider disabled size="small" defaultValue={80} aria-label="출석률" />
         </div>
       </div>
+
+      <a href="/attendance" className="mb-10 px-10 py-3 bg-slate-300">
+        출석부
+      </a>
 
       <div className="text-3xl text-center">수강한 학생 정보</div>
       <table className="w-full max-w-3xl h-fit px-28 py-10">
