@@ -9,6 +9,8 @@ const SideNav = () => {
         <a href="/">정보수정</a>
       </div>
 
+      <a href="/attendance">출석부</a>
+
       <div className="flex flex-col gap-5">
         <a href="/classcontent">수업1</a>
         <a href="/classcontent">수업2</a>

@@ -1,11 +1,24 @@
 import { Slider } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-const ClassContents = () => {
+type ClassContentsProps = {
+  name?: string;
+  gender?: string;
+  studentAttendance?: number;
+  classTotal?: number;
+};
+
+const ClassContents = ({
+  name = "OOO",
+  gender = "OOO",
+  studentAttendance = 1,
+  classTotal = 10,
+}: ClassContentsProps) => {
+  const tableCSS = "w-full my-4 border-b grid grid-cols-4 justify-items-center";
+
   return (
     <div className="flex flex-col items-center">
-      <div className="text-5xl text-center my-10">수업명</div>
-
+      <div className="text-3xl text-center my-10">수업명</div>
       <div className="px-80 flex gap-10 mb-10">
         {/* 수업횟수 */}
         <div className="w-96 h-fit p-5 bg-slate-100">
@@ -31,25 +44,21 @@ const ClassContents = () => {
         </div>
       </div>
 
-      {/* 수강한 학생 정보 (삭제가능) */}
-      <table className="w-full max-w-3xl h-fit px-28 py-10 flex flex-col items-center gap-5 border">
-        <tr className="w-full flex justify-between">
+      <div className="text-3xl text-center">수강한 학생 정보</div>
+      <table className="w-full max-w-3xl h-fit px-28 py-10">
+        <tr className={tableCSS}>
           <th>이름</th>
           <th>성별</th>
+          <th>출석률</th>
           <th>삭제</th>
         </tr>
 
-        <tr className="w-full flex justify-between">
-          <td>ㅇㅇㅇ</td>
-          <td>Femail</td>
+        <tr className={tableCSS}>
+          <td>{name}</td>
+          <td>{gender}</td>
           <td>
-            <DeleteIcon />
+            {studentAttendance} / {classTotal}
           </td>
-        </tr>
-
-        <tr className="w-full flex justify-between">
-          <td>ㅇㅇㅇ</td>
-          <td>Mail</td>
           <td>
             <DeleteIcon />
           </td>

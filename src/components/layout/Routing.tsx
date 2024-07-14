@@ -3,6 +3,7 @@ import Layout from "./Layout";
 import Login from "../organism/Login";
 import Register from "../organism/Register";
 import ClassContents from "../organism/ClassContents";
+import Attendance from "../organism/Attendance";
 
 const Routing = () => {
   return (
@@ -10,6 +11,7 @@ const Routing = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/login" element={<Login />}></Route>
+          <Route path="/attendance" element={<Attendance />}></Route>
           <Route path="/register" element={<Register />}></Route>
           <Route path="/classcontent" element={<ClassContents />}></Route>
         </Route>
