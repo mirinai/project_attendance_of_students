@@ -14,8 +14,6 @@ const ClassContents = ({
   studentAttendance = 1,
   classTotal = 10,
 }: ClassContentsProps) => {
-  const tableCSS = "w-full my-4 border-b grid grid-cols-4 justify-items-center";
-
   return (
     <div className="flex flex-col items-center">
       <div className="text-3xl text-center my-10">수업명</div>
@@ -51,20 +49,20 @@ const ClassContents = ({
 
       <div className="text-3xl text-center">수강한 학생 정보</div>
       <table className="w-full max-w-3xl h-fit px-28 py-10">
-        <tr className={tableCSS}>
+        <tr className="w-full my-4 border-b grid grid-cols-4 justify-items-center">
           <th>이름</th>
           <th>성별</th>
           <th>출석률</th>
           <th>삭제</th>
         </tr>
 
-        <tr className={tableCSS}>
+        <tr className="w-full my-4 border-b grid grid-cols-4 justify-items-center">
           <td>{name}</td>
           <td>{gender}</td>
           <td>
             {studentAttendance} / {classTotal}
           </td>
-          <td>
+          <td className="hover:cursor-pointer">
             <DeleteIcon />
           </td>
         </tr>
