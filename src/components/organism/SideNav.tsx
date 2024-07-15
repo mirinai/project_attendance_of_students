@@ -5,7 +5,7 @@ const SideNav = () => {
         <a href="/login" className="bg-slate-500 text-white px-5 py-1 mb-5">
           로그인
         </a>
-        <a href="/" className="w-20 h-20 bg-black rounded-full"></a>
+        <a href="/main" className="w-20 h-20 bg-black rounded-full"></a>
         <a href="/">정보수정</a>
         <a href="/register">학생등록</a>
       </div>

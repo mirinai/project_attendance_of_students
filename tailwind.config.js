@@ -6,6 +6,7 @@ module.exports = {
     extend: {},
     fontFamily: {
       Pretendard: ["Pretendard-Regular"],
+      Gmarket: ["GmarketSansMedium"],
     },
   },
   plugins: [],
