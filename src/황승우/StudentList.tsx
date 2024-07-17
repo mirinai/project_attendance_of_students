@@ -13,6 +13,7 @@ import {
   Select,
   TextField,
 } from "@mui/material";
+import { useState } from "react";
 
 export type StuProps = {
   id?: number;
@@ -21,7 +22,6 @@ export type StuProps = {
   gender?: string;
   classes?: string;
   isChecked?: boolean;
-  onChangeChecked?: () => void;
 };
 
 const StudentList = ({
@@ -30,21 +30,24 @@ const StudentList = ({
   studentNumber,
   gender,
   classes,
-  isChecked = false,
-  onChangeChecked,
+  isChecked,
 }: StuProps) => {
   const label = { inputProps: { "aria-label": "Checkbox demo" } };
+
+  const [checkedItem, setCheckedItem] = useState<boolean>(true);
+
+  const handleClick = () => {
+    setCheckedItem(!checkedItem);
+    isChecked = checkedItem;
+    // console.log(checkedItem);
+    // console.log(isChecked);
+  };
 
   return (
     <>
       <tr>
         <td>
-          <Checkbox
-            value={id}
-            {...label}
-            checked={isChecked}
-            onChange={onChangeChecked}
-          />
+          <Checkbox {...label} checked={isChecked} onClick={handleClick} />
         </td>
         <td>
           <TextField

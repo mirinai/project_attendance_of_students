@@ -23,6 +23,7 @@ const Register = () => {
   const label = { inputProps: { "aria-label": "Checkbox demo" } };
   const [id, setId] = useState<number>(0);
   const [addStu, setStu] = useState<StuProps[]>([]);
+  const [checkedAll, setCheckedAll] = useState(false);
 
   const clickRegister = () => {
     alert("등록하기 버튼 클릭");
@@ -31,6 +32,10 @@ const Register = () => {
     const newStu = { id };
     setStu((prev) => [...prev, newStu]);
     setId((prev) => prev + 1);
+  };
+
+  const selectAll = () => {
+    alert("전체 선택 토글 수정");
   };
 
   return (
@@ -45,7 +50,7 @@ const Register = () => {
         <table className="border w-full">
           <tr>
             <th>
-              <Checkbox {...label} />
+              <Checkbox {...label} onClick={selectAll} />
             </th>
             <th>학생명</th>
             <th>학번</th>
