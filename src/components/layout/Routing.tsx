@@ -5,6 +5,7 @@ import Register from "../organism/Register";
 import ClassContents from "../organism/ClassContents";
 import Attendance from "../organism/Attendance";
 import Main from "../organism/Main";
+import StudentList from "../../황승우/StudentList";
 
 const Routing = () => {
   return (
@@ -16,6 +17,7 @@ const Routing = () => {
           <Route path="/attendance" element={<Attendance />}></Route>
           <Route path="/register" element={<Register />}></Route>
           <Route path="/classcontent" element={<ClassContents />}></Route>
+          <Route path="/register/test" element={<StudentList />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>
