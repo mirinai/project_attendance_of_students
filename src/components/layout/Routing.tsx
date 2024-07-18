@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "./Layout";
 import Login from "../organism/Login";
 import Register from "../organism/Register";
-import ClassContents from "../organism/ClassContents";
+import ClassContents from "../organism/CourseContents";
 import Attendance from "../organism/Attendance";
 import Main from "../organism/Main";
 import StudentList from "../../황승우/StudentList";

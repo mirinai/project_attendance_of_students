@@ -18,7 +18,7 @@ const ClassContents = ({
     <div className="flex flex-col items-center">
       <div className="text-3xl text-center my-10">수업명</div>
 
-      <div className="px-80 flex gap-10 mb-10">
+      <div className="px-80 flex gap-10">
         {/* 수업횟수 */}
         <div className="w-96 h-fit p-5 bg-slate-100">
           <div className="my-3 flex justify-between items-end">
@@ -43,11 +43,14 @@ const ClassContents = ({
         </div>
       </div>
 
-      <a href="/attendance" className="mb-10 px-10 py-3 bg-slate-300">
+      <a
+        href="/attendance"
+        className="w-fit h-fit px-8 py-2 my-10 bg-violet-400"
+      >
         출석부
       </a>
 
-      <div className="text-3xl text-center">수강한 학생 정보</div>
+      <div className="text-3xl text-center mb-5">수강한 학생 정보</div>
       <table className="w-full max-w-3xl h-fit px-28 py-10">
         <tr className="w-full my-4 border-b grid grid-cols-4 justify-items-center">
           <th>이름</th>

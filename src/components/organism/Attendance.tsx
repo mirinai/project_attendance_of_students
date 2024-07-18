@@ -4,9 +4,6 @@ import Box from "@mui/material/Box";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 
 const Attendance = () => {
-  const tableCSS =
-    "py-3 border-b border-black grid grid-cols-4 justify-items-center items-center";
-
   const columns: GridColDef<(typeof rows)[number]>[] = [
     {
       field: "id",
@@ -69,14 +66,14 @@ const Attendance = () => {
 
       {/* 
       <table className="mt-5 w-full max-w-4xl mx-auto">
-        <tr className={tableCSS}>
+        <tr className="py-3 border-b border-black grid grid-cols-4 justify-items-center items-center">
           <th>번호</th>
           <th>이름</th>
           <th>출석여부</th>
           <th>비고</th>
         </tr>
 
-        <tr className={tableCSS}>
+        <tr className="py-3 border-b border-black grid grid-cols-4 justify-items-center items-center">
           <td>A01</td>
           <td>ㅇㅇㅇ</td>
           <td>

@@ -7,6 +7,7 @@ module.exports = {
     fontFamily: {
       Pretendard: ["Pretendard-Regular"],
       Gmarket: ["GmarketSansMedium"],
+      SCore: ["S-CoreDream-4Regular"],
     },
   },
   plugins: [],
