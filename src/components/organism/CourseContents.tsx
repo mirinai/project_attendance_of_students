@@ -3,17 +3,19 @@ import DeleteIcon from "@mui/icons-material/Delete";
 
 type ClassContentsProps = {
   name?: string;
-  gender?: string;
+  gender?: "Mail" | "Femail";
   studentAttendance?: number;
   classTotal?: number;
 };
 
 const ClassContents = ({
   name = "OOO",
-  gender = "OOO",
+  gender = "Mail",
   studentAttendance = 1,
   classTotal = 10,
 }: ClassContentsProps) => {
+  const handleDelete = () => alert("삭제");
+
   return (
     <div className="flex flex-col items-center">
       <div className="text-3xl text-center my-10">수업명</div>
@@ -65,7 +67,7 @@ const ClassContents = ({
           <td>
             {studentAttendance} / {classTotal}
           </td>
-          <td className="hover:cursor-pointer">
+          <td className="hover:cursor-pointer" onClick={handleDelete}>
             <DeleteIcon />
           </td>
         </tr>
