@@ -1,3 +1,4 @@
+import { SelectAll } from "@mui/icons-material";
 import {
   Button,
   Checkbox,
@@ -22,6 +23,7 @@ export type StuProps = {
   gender?: string;
   classes?: string;
   isChecked?: boolean;
+  setChange?: () => void;
 };
 
 const StudentList = ({
@@ -31,23 +33,15 @@ const StudentList = ({
   gender,
   classes,
   isChecked,
+  setChange,
 }: StuProps) => {
   const label = { inputProps: { "aria-label": "Checkbox demo" } };
-
-  const [checkedItem, setCheckedItem] = useState<boolean>(true);
-
-  const handleClick = () => {
-    setCheckedItem(!checkedItem);
-    isChecked = checkedItem;
-    // console.log(checkedItem);
-    // console.log(isChecked);
-  };
 
   return (
     <>
       <tr>
         <td>
-          <Checkbox {...label} checked={isChecked} onClick={handleClick} />
+          <Checkbox {...label} checked={isChecked} onChange={setChange} />
         </td>
         <td>
           <TextField
