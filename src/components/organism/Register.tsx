@@ -1,18 +1,4 @@
-import {
-  Button,
-  Checkbox,
-  Fab,
-  FormControl,
-  FormControlLabel,
-  FormLabel,
-  InputLabel,
-  MenuItem,
-  NativeSelect,
-  Radio,
-  RadioGroup,
-  Select,
-  TextField,
-} from "@mui/material";
+import { Button, Checkbox } from "@mui/material";
 
 import { useState } from "react";
 import StudentList, { StuProps } from "../../황승우/StudentList";
@@ -25,11 +11,11 @@ export const Register = () => {
   const [checkedAll, setCheckedAll] = useState(false);
   const [handleCheck, setHandleCheck] = useState<boolean[]>([]);
 
-  const selectCheckAll = () => {
+  function selectCheckAll() {
     setCheckedAll((prev) => !prev);
     const array = new Array(addStu.length).fill(!checkedAll);
     setHandleCheck(array);
-  };
+  }
 
   const handleCheckBox = (position: number) => {
     const newCheckState = handleCheck.map((v, i) => (i === position ? !v : v));
@@ -43,7 +29,7 @@ export const Register = () => {
     // DB 연결시 학생명, 학생 학번(key 값?), 성별(학생 구분 내용, 미확정), 수업하는 수강명 or 수강정보, 등록하는 교수의 정보
   };
   const registerButton = () => {
-    const newStu = { id, name: "", studentNumber: 0, gender: "", classes: "" };
+    const newStu = { id };
     setStu((prev) => [...prev, newStu]);
     setHandleCheck((prev) => [...prev, false]);
     setId((prev) => prev + 1);
@@ -68,8 +54,8 @@ export const Register = () => {
               />
             </th>
             <th>학생명</th>
-            <th>학번</th>
-            <th>성별</th>
+            <th>이메일</th>
+            <th>전화번호</th>
             <th>수강 수업</th>
             <th>
               <AddButton handleClick={registerButton} />

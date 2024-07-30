@@ -17,7 +17,6 @@ const Routing = () => {
           <Route path="/attendance" element={<Attendance />}></Route>
           <Route path="/register" element={<Register />}></Route>
           <Route path="/classcontent" element={<ClassContents />}></Route>
-          <Route path="/register/test" element={<StudentList />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>

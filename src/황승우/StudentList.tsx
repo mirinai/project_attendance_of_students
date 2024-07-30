@@ -14,13 +14,13 @@ import {
   Select,
   TextField,
 } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export type StuProps = {
   id?: number;
   name?: string;
-  studentNumber?: number;
-  gender?: string;
+  email?: string;
+  phone?: string;
   classes?: string;
   isChecked?: boolean;
   setChange?: () => void;
@@ -29,13 +29,33 @@ export type StuProps = {
 const StudentList = ({
   id,
   name,
-  studentNumber,
-  gender,
+  email,
+  phone,
   classes,
   isChecked,
   setChange,
 }: StuProps) => {
   const label = { inputProps: { "aria-label": "Checkbox demo" } };
+  const [emailErr, setEmailErr] = useState(false);
+  const [phoneErr, setPhoneErr] = useState(false);
+  const emailCheck =
+    /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
+  useEffect(() => {
+    setEmailErr(!emailCheck.test(email ?? ""));
+  }, [email]);
+
+  const phoneCheck = /^(01[016789]{1})-[0-9]{3,4}-[0-9]{4}$/;
+  useEffect(() => {
+    setPhoneErr(!phoneCheck.test(phone ?? ""));
+  }, [phone]);
+
+  const handleChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmailErr(!emailCheck.test(e.target.value));
+  };
+
+  const handleChangePhone = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPhoneErr(!phoneCheck.test(e.target.value));
+  };
 
   return (
     <>
@@ -52,29 +72,40 @@ const StudentList = ({
           />
         </td>
         <td>
-          <TextField
-            id="outlined-basic"
-            label="학번"
-            variant="outlined"
-            value={studentNumber}
-          />
+          <div className="flex">
+            <div className="">
+              <TextField
+                required
+                id="outlined-required"
+                label="E-mail"
+                value={email}
+                onChange={handleChangeEmail}
+                error={emailErr}
+                helperText={
+                  emailErr ? "올바른 이메일 형식으로 입력해주세요." : ""
+                }
+              />
+            </div>
+          </div>
         </td>
         <td>
-          <FormControl>
-            <RadioGroup
-              aria-labelledby="demo-radio-buttons-group-label"
-              defaultValue="female"
-              name="radio-buttons-group"
-              value={gender}
-            >
-              <FormControlLabel
-                value="female"
-                control={<Radio />}
-                label="Female"
+          <div className="flex">
+            <div className="">
+              <TextField
+                required
+                id="outlined-required"
+                label="전화번호"
+                value={phone}
+                onChange={handleChangePhone}
+                error={phoneErr}
+                helperText={
+                  phoneErr
+                    ? "올바른 전화번호 형식 또는 -을 추가해 입력해주세요."
+                    : ""
+                }
               />
-              <FormControlLabel value="male" control={<Radio />} label="Male" />
-            </RadioGroup>
-          </FormControl>
+            </div>
+          </div>
         </td>
         <td>
           <FormControl fullWidth>
