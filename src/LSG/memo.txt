@@ -1,5 +1,23 @@
-[7월 15일 - 20일]
-1. Main.tsx 만들고, 첫 화면에 login 페이지가 보이게 router 수정 방법 찾아보기
-2. Attendance → mui에 있는 grid로 작성
-3. organism대로 atom/molecules로 쪼갤거 구상하기
-4. DB 테이블 구상하기
+const DATABASE = {
+  CONFIG: {
+    host: "localhost",
+    user: "root",
+    password: "qwer1234",
+    database: "management",
+  },
+
+  QUERY: {
+    LECTURE_ROOM: {},
+    COURSE: {},
+    COURSE_SCHEDULE: {},
+    CURRICULUM: {},
+    TUTOR: {},
+    EDUCATION: {},
+    STUDENT: {
+      FINDALL: "SELECT * FROM STUDENT",
+    },
+    ENROLLMENT: {},
+  },
+};
+
+DB 코드정리할때 사용
