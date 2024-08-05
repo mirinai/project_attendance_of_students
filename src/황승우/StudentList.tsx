@@ -15,13 +15,14 @@ import {
   TextField,
 } from "@mui/material";
 import { useEffect, useState } from "react";
+import CourseList from "../황승우/CourseList";
 
 export type StuProps = {
   id?: number;
   name?: string;
   email?: string;
   phone?: string;
-  classes?: string;
+  course?: string;
   isChecked?: boolean;
   setChange?: () => void;
 };
@@ -31,7 +32,7 @@ const StudentList = ({
   name,
   email,
   phone,
-  classes,
+  course,
   isChecked,
   setChange,
 }: StuProps) => {
@@ -108,22 +109,7 @@ const StudentList = ({
           </div>
         </td>
         <td>
-          <FormControl fullWidth>
-            <NativeSelect
-              value={classes}
-              defaultValue={"kor"}
-              inputProps={{
-                name: "age",
-                id: "uncontrolled-native",
-              }}
-            >
-              <option value={"math"}>수학</option>
-              <option value={"science"}>과학</option>
-              <option value={"eng"}>영어</option>
-              <option value={"his"}>한국사</option>
-              <option value={"kor"}>국어</option>
-            </NativeSelect>
-          </FormControl>
+          <CourseList course={course} />
         </td>
       </tr>
     </>
