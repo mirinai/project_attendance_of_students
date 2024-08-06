@@ -1,9 +1,9 @@
 const DATABASE = {
   CONFIG: {
-    host: "",
-    user: "",
-    password: "",
-    database: "",
+    host: "localhost",
+    user: "root",
+    password: "qwer1234",
+    database: "management",
   },
 
   QUERY: {
@@ -13,7 +13,9 @@ const DATABASE = {
     CURRICULUM: {},
     TUTOR: {},
     EDUCATION: {},
-    STUDENT: {},
+    STUDENT: {
+      FINDALL: "SELECT * FROM STUDENT",
+    },
     ENROLLMENT: {},
   },
 };
