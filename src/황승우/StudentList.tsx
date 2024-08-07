@@ -1,62 +1,77 @@
-import { SelectAll } from "@mui/icons-material";
-import {
-  Button,
-  Checkbox,
-  Fab,
-  FormControl,
-  FormControlLabel,
-  FormLabel,
-  InputLabel,
-  MenuItem,
-  NativeSelect,
-  Radio,
-  RadioGroup,
-  Select,
-  TextField,
-} from "@mui/material";
+import { Checkbox, FormControl, NativeSelect, TextField } from "@mui/material";
 import { useEffect, useState } from "react";
 import CourseList from "../황승우/CourseList";
 
 export type StuProps = {
   id?: number;
-  name?: string;
-  email?: string;
-  phone?: string;
-  course?: string;
+  student_name?: string;
+  student_email?: string;
+  student_phone?: string;
+  course_id?: string;
   isChecked?: boolean;
   setChange?: () => void;
+  updateStudent?: (updatedStudent: StuProps) => void;
 };
 
 const StudentList = ({
   id,
-  name,
-  email,
-  phone,
-  course,
+  student_name,
+  student_email,
+  student_phone,
+  course_id,
   isChecked,
   setChange,
+  updateStudent,
 }: StuProps) => {
   const label = { inputProps: { "aria-label": "Checkbox demo" } };
+  const [localStudent, setLocalStudent] = useState<StuProps>({
+    id,
+    student_name,
+    student_email,
+    student_phone,
+    course_id,
+  });
   const [emailErr, setEmailErr] = useState(false);
   const [phoneErr, setPhoneErr] = useState(false);
+
+  const [courseList, setCourse] = useState<
+    { course_id: string; course_name: string }[]
+  >([]);
+  const openList = async () => {
+    const response = await fetch("http://localhost:3001/course/course_list");
+    const data = await response.json();
+    setCourse(data);
+  };
+
+  useEffect(() => {
+    openList();
+  }, []);
+
   const emailCheck =
     /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
   useEffect(() => {
-    setEmailErr(!emailCheck.test(email ?? ""));
-  }, [email]);
+    setEmailErr(!emailCheck.test(localStudent.student_email ?? ""));
+  }, [localStudent.student_email]);
 
   const phoneCheck = /^(01[016789]{1})-[0-9]{3,4}-[0-9]{4}$/;
   useEffect(() => {
-    setPhoneErr(!phoneCheck.test(phone ?? ""));
-  }, [phone]);
+    setPhoneErr(!phoneCheck.test(localStudent.student_phone ?? ""));
+  }, [localStudent.student_phone]);
 
-  const handleChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEmailErr(!emailCheck.test(e.target.value));
-  };
+  useEffect(() => {
+    if (updateStudent) {
+      updateStudent(localStudent);
+    }
+  }, [localStudent, updateStudent]);
 
-  const handleChangePhone = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPhoneErr(!phoneCheck.test(e.target.value));
-  };
+  const handleChange =
+    (field: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
+      const value = e.target.value;
+      setLocalStudent((prev) => ({
+        ...prev,
+        [field]: value,
+      }));
+    };
 
   return (
     <>
@@ -69,7 +84,8 @@ const StudentList = ({
             id="outlined-basic"
             label="이름"
             variant="outlined"
-            value={name}
+            value={localStudent.student_name}
+            onChange={handleChange("student_name")}
           />
         </td>
         <td>
@@ -79,8 +95,8 @@ const StudentList = ({
                 required
                 id="outlined-required"
                 label="E-mail"
-                value={email}
-                onChange={handleChangeEmail}
+                value={localStudent.student_email}
+                onChange={handleChange("student_email")}
                 error={emailErr}
                 helperText={
                   emailErr ? "올바른 이메일 형식으로 입력해주세요." : ""
@@ -96,8 +112,8 @@ const StudentList = ({
                 required
                 id="outlined-required"
                 label="전화번호"
-                value={phone}
-                onChange={handleChangePhone}
+                value={localStudent.student_phone}
+                onChange={handleChange("student_phone")}
                 error={phoneErr}
                 helperText={
                   phoneErr
@@ -109,7 +125,20 @@ const StudentList = ({
           </div>
         </td>
         <td>
-          <CourseList course={course} />
+          <FormControl fullWidth>
+            <NativeSelect
+              value={localStudent.course_id}
+              onClick={openList}
+              inputProps={{
+                name: "age",
+                id: "uncontrolled-native",
+              }}
+            >
+              {courseList.map((v) => (
+                <option value={v.course_id}>{v.course_name}</option>
+              ))}
+            </NativeSelect>
+          </FormControl>
         </td>
       </tr>
     </>

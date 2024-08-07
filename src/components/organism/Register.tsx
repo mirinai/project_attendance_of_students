@@ -1,8 +1,8 @@
 import { Button, Checkbox } from "@mui/material";
-
 import { useState } from "react";
 import StudentList, { StuProps } from "../../황승우/StudentList";
 import AddButton from "../../황승우/AddButton";
+import CourseList from "../../황승우/CourseList";
 
 export const Register = () => {
   const label = { inputProps: { "aria-label": "Checkbox demo" } };
@@ -25,14 +25,44 @@ export const Register = () => {
   };
 
   const clickRegister = () => {
-    alert("등록하기 버튼 클릭");
-    // DB 연결시 학생명, 학생 학번(key 값?), 성별(학생 구분 내용, 미확정), 수업하는 수강명 or 수강정보, 등록하는 교수의 정보
+    fetch("http://localhost:3001/student/register", {
+      method: "post",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(addStu),
+    })
+      .then((v) => v.json())
+      .then(() => {
+        alert("등록완료");
+        console.log("등록완료 알럿직후");
+      });
+
+    console.log(JSON.stringify(addStu));
   };
+
   const registerButton = () => {
-    const newStu = { id };
-    setStu((prev) => [...prev, newStu]);
-    setHandleCheck((prev) => [...prev, false]);
-    setId((prev) => prev + 1);
+    const newStu = {
+      id,
+      student_name: "",
+      student_email: "",
+      student_phone: "",
+      course_id: undefined,
+    };
+    setStu((prev) => {
+      const updatedStu = [...prev, newStu];
+      setHandleCheck((prev) => [...prev, false]);
+      setId((prev) => prev + 1);
+      return updatedStu;
+    });
+  };
+
+  const updateStudent = (index: number, updatedStudent: StuProps) => {
+    setStu((prev) => {
+      const newStudents = [...prev];
+      newStudents[index] = updatedStudent;
+      return newStudents;
+    });
   };
 
   return (
@@ -45,32 +75,37 @@ export const Register = () => {
       </div>
       <div className="w-5/6">
         <table className="border w-full">
-          <tr>
-            <th>
-              <Checkbox
-                {...label}
-                checked={checkedAll}
-                onClick={selectCheckAll}
+          <thead>
+            <tr>
+              <th>
+                <Checkbox
+                  {...label}
+                  checked={checkedAll}
+                  onClick={selectCheckAll}
+                />
+              </th>
+              <th>학생명</th>
+              <th>이메일</th>
+              <th>전화번호</th>
+              <th>수강 수업</th>
+              <th>
+                <AddButton handleClick={registerButton} />
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {addStu.map((v, i) => (
+              <StudentList
+                key={v.id}
+                isChecked={handleCheck[i]}
+                setChange={() => handleCheckBox(i)}
+                updateStudent={(updatedStudent) =>
+                  updateStudent(i, updatedStudent)
+                }
+                {...v}
               />
-            </th>
-            <th>학생명</th>
-            <th>이메일</th>
-            <th>전화번호</th>
-            <th>수강 수업</th>
-            <th>
-              <AddButton handleClick={registerButton} />
-            </th>
-          </tr>
-          {/* 표 헤더 끝 추가 라인 */}
-
-          {addStu.map((v, i) => (
-            <StudentList
-              key={v.id}
-              isChecked={handleCheck[i]}
-              setChange={() => handleCheckBox(i)}
-              {...v}
-            />
-          ))}
+            ))}
+          </tbody>
         </table>
       </div>
     </div>
