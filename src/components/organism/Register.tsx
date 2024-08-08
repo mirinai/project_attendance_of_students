@@ -25,20 +25,32 @@ export const Register = () => {
   };
 
   const clickRegister = () => {
-    fetch("http://localhost:3001/student/register", {
-      method: "post",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(addStu),
-    })
-      .then((v) => v.json())
-      .then(() => {
-        alert("등록완료");
-        console.log("등록완료 알럿직후");
-      });
+    if (
+      addStu.some(
+        (v) =>
+          !v.student_name ||
+          !v.student_email ||
+          !v.student_phone ||
+          !v.course_id
+      )
+    ) {
+      alert("학생을 등록하지 못했습니다. 등록란에 올바르게 작성해주세요.");
+    } else {
+      fetch("http://localhost:3001/student/register", {
+        method: "post",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(addStu),
+      })
+        .then((v) => v.json())
+        .then(() => {
+          alert("등록완료");
+          console.log("등록완료 알럿직후");
+        });
 
-    console.log(JSON.stringify(addStu));
+      console.log(JSON.stringify(addStu));
+    }
   };
 
   const registerButton = () => {
@@ -47,7 +59,8 @@ export const Register = () => {
       student_name: "",
       student_email: "",
       student_phone: "",
-      course_id: undefined,
+      course_id: "",
+      course_name: "",
     };
     setStu((prev) => {
       const updatedStu = [...prev, newStu];

@@ -1,6 +1,5 @@
 import { Checkbox, FormControl, NativeSelect, TextField } from "@mui/material";
 import { useEffect, useState } from "react";
-import CourseList from "../황승우/CourseList";
 
 export type StuProps = {
   id?: number;
@@ -8,6 +7,7 @@ export type StuProps = {
   student_email?: string;
   student_phone?: string;
   course_id?: string;
+  course_name?: string; // course_name을 추가합니다.
   isChecked?: boolean;
   setChange?: () => void;
   updateStudent?: (updatedStudent: StuProps) => void;
@@ -19,6 +19,7 @@ const StudentList = ({
   student_email,
   student_phone,
   course_id,
+  course_name,
   isChecked,
   setChange,
   updateStudent,
@@ -30,6 +31,7 @@ const StudentList = ({
     student_email,
     student_phone,
     course_id,
+    course_name,
   });
   const [emailErr, setEmailErr] = useState(false);
   const [phoneErr, setPhoneErr] = useState(false);
@@ -65,13 +67,25 @@ const StudentList = ({
   }, [localStudent, updateStudent]);
 
   const handleChange =
-    (field: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
+    (v: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
       const value = e.target.value;
       setLocalStudent((prev) => ({
         ...prev,
-        [field]: value,
+        [v]: value,
       }));
     };
+
+  const handleCourseChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectCourseId = e.target.value;
+    const selectCourse = courseList.find(
+      (course) => course.course_id === selectCourseId
+    );
+    setLocalStudent((prev) => ({
+      ...prev,
+      course_id: selectCourseId,
+      course_name: selectCourse?.course_name ?? "",
+    }));
+  };
 
   return (
     <>
@@ -128,14 +142,16 @@ const StudentList = ({
           <FormControl fullWidth>
             <NativeSelect
               value={localStudent.course_id}
-              onClick={openList}
+              onChange={handleCourseChange}
               inputProps={{
                 name: "age",
                 id: "uncontrolled-native",
               }}
             >
               {courseList.map((v) => (
-                <option value={v.course_id}>{v.course_name}</option>
+                <option key={v.course_id} value={v.course_id}>
+                  {v.course_name}
+                </option>
               ))}
             </NativeSelect>
           </FormControl>
