@@ -8,6 +8,10 @@ export type StuProps = {
   student_email?: string;
   student_phone?: string;
   course_id?: string;
+// <<<<<<< HEAD
+// =======
+  course_name?: string; // course_name을 추가합니다.
+// >>>>>>> 5d93981e7b36c58c52e0837135d70da047f97f87
   isChecked?: boolean;
   setChange?: () => void;
   updateStudent?: (updatedStudent: StuProps) => void;
@@ -19,6 +23,10 @@ const StudentList = ({
   student_email,
   student_phone,
   course_id,
+<<<<<<< HEAD
+=======
+  course_name,
+>>>>>>> 5d93981e7b36c58c52e0837135d70da047f97f87
   isChecked,
   setChange,
   updateStudent,
@@ -30,6 +38,10 @@ const StudentList = ({
     student_email,
     student_phone,
     course_id,
+<<<<<<< HEAD
+=======
+    course_name,
+>>>>>>> 5d93981e7b36c58c52e0837135d70da047f97f87
   });
   const [emailErr, setEmailErr] = useState(false);
   const [phoneErr, setPhoneErr] = useState(false);
@@ -65,6 +77,7 @@ const StudentList = ({
   }, [localStudent, updateStudent]);
 
   const handleChange =
+<<<<<<< HEAD
     (field: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
       const value = e.target.value;
       setLocalStudent((prev) => ({
@@ -72,6 +85,27 @@ const StudentList = ({
         [field]: value,
       }));
     };
+=======
+    (v: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
+      const value = e.target.value;
+      setLocalStudent((prev) => ({
+        ...prev,
+        [v]: value,
+      }));
+    };
+
+  const handleCourseChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectCourseId = e.target.value;
+    const selectCourse = courseList.find(
+      (course) => course.course_id === selectCourseId
+    );
+    setLocalStudent((prev) => ({
+      ...prev,
+      course_id: selectCourseId,
+      course_name: selectCourse?.course_name ?? "",
+    }));
+  };
+>>>>>>> 5d93981e7b36c58c52e0837135d70da047f97f87
 
   return (
     <>
@@ -128,14 +162,24 @@ const StudentList = ({
           <FormControl fullWidth>
             <NativeSelect
               value={localStudent.course_id}
+<<<<<<< HEAD
               onClick={openList}
+=======
+              onChange={handleCourseChange}
+>>>>>>> 5d93981e7b36c58c52e0837135d70da047f97f87
               inputProps={{
                 name: "age",
                 id: "uncontrolled-native",
               }}
             >
               {courseList.map((v) => (
+<<<<<<< HEAD
                 <option value={v.course_id}>{v.course_name}</option>
+=======
+                <option key={v.course_id} value={v.course_id}>
+                  {v.course_name}
+                </option>
+>>>>>>> 5d93981e7b36c58c52e0837135d70da047f97f87
               ))}
             </NativeSelect>
           </FormControl>

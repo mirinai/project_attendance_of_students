@@ -6,7 +6,7 @@ const SideNav = () => {
           로그인
         </a>
         <a href="/main" className="w-20 h-20 bg-black rounded-full"></a>
-        <a href="/">정보수정</a>
+        <a href="/changeinfo">정보수정</a>
         <a href="/register">학생등록</a>
       </div>
 
