@@ -13,7 +13,8 @@
 ---
 
 ## 웹페이지 디자인
-<img src="https://img.shields.io/badge/노션-000000?style=flat-square&logo=notion&logoColor=white"/>
+<img src="https://img.shields.io/badge/노션-000000?style=flat-square&logo=notion&logoColor=white" />
+
 #### https://han.gl/Ix9b3
 
 ---
