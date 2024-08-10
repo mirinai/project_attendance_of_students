@@ -41,6 +41,6 @@ const executeQuery = async (query, params = []) => {
 
 const getTutors = async () => await executeQuery(DATABASE.QUERY.TUTOR.FINDALL);
 
-app.get("/tutor/json", async (req, res) => {
+app.get("/main/tutor", async (req, res) => {
   res.json(getTutors());
 });
