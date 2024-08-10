@@ -1,3 +1,5 @@
+![header](https://capsule-render.vercel.app/api?type=venom&color=auto&height=400&section=header&text=Student%Management%System&fontSize=40)
+
 # Student Management System
 
 ---
