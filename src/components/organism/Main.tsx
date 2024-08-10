@@ -60,7 +60,7 @@ const Main = () => {
   //   },
   // ];
   return (
-    <div className="flex w-full">
+    <div className="flex w-full h-fit">
       <div className="flex items-center justify-center w-full h-full">
         <div className="flex flex-col w-full p-2">
           <PersonalTimetable tutors={tutors} />
