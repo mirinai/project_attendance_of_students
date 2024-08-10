@@ -2,7 +2,7 @@
 
 ---
 
-## 웹페이지 디자인 (https://han.gl/Ix9b3)
+## [웹페이지 디자인](https://han.gl/Ix9b3)
 
 ---
 
