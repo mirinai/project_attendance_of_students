@@ -9,27 +9,29 @@ import {
 import TableHeader from "./TableHeader";
 import TableBodyContents from "./TableBodyContents";
 
-type Subject = {
-  name: string;
-  schedule: string;
-};
+// type Subject = {
+//   name: string;
+//   schedule: string;
+// };
 
-type Student = {
+type Tutors = {
   id: number;
   name: string;
-  subjects: Subject[];
+  phone: string;
+  email: string;
+  // subjects: Subject[];
 };
 
 type PersonalTimetableProps = {
-  students: Student[];
+  tutors: Tutors[];
 };
 
-const PersonalTimetable = ({ students }: PersonalTimetableProps) => {
+const PersonalTimetable = ({ tutors }: PersonalTimetableProps) => {
   return (
     <TableContainer>
       <Table>
         <TableHeader />
-        <TableBodyContents students={students} />
+        <TableBodyContents tutors={tutors} />
       </Table>
     </TableContainer>
   );

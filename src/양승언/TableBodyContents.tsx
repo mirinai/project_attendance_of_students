@@ -1,41 +1,56 @@
 import { TableBody, TableRow, TableCell } from "@mui/material";
 
-type Subject = {
-  name: string;
-  schedule: string;
-};
+// type Subject = {
+//   name: string;
+//   schedule: string;
+// };
 
-type Student = {
+type Tutors = {
   id: number;
   name: string;
-  subjects: Subject[];
+  phone: string;
+  email: string;
+  // subjects: Subject[];
 };
 
 type TableBodyContentsProps = {
-  students: Student[];
+  tutors: Tutors[];
 };
 
-const TableBodyContents = ({ students }: TableBodyContentsProps) => {
+const TableBodyContents = ({ tutors }: TableBodyContentsProps) => {
   return (
     <TableBody>
-      {students.map((student) =>
-        student.subjects.map((subject, index) => (
-          <TableRow key={`${student.id}-${index}`}>
-            {index === 0 && (
-              <TableCell rowSpan={student.subjects.length}>
-                {student.id}
+      {tutors.map((tutors) => (
+        // tutors.subjects.map((subject, index) => (
+        <TableRow>
+          <TableCell>{tutors.id}</TableCell>
+          <TableCell>{tutors.name}</TableCell>
+          <TableCell>{tutors.phone}</TableCell>
+          <TableCell>{tutors.email}</TableCell>
+          {/* {index === 0 && (
+              <TableCell rowSpan={tutors.subjects.length}>
+                {tutors.id}
               </TableCell>
             )}
             {index === 0 && (
-              <TableCell rowSpan={student.subjects.length}>
-                {student.name}
+              <TableCell rowSpan={tutors.subjects.length}>
+                {tutors.name}
               </TableCell>
             )}
-            <TableCell>{subject.name}</TableCell>
-            <TableCell>{subject.schedule}</TableCell>
-          </TableRow>
-        ))
-      )}
+            {index === 0 && (
+              <TableCell rowSpan={tutors.subjects.length}>
+                {tutors.phone}
+              </TableCell>
+            )}
+            {index === 0 && (
+              <TableCell rowSpan={tutors.subjects.length}>
+                {tutors.email}
+              </TableCell>
+            )} */}
+          {/* <TableCell>{subject.name}</TableCell>
+            <TableCell>{subject.schedule}</TableCell> */}
+        </TableRow>
+      ))}
     </TableBody>
   );
 };

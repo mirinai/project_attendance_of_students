@@ -6,8 +6,10 @@ const TableHeader = () => {
       <TableRow>
         <TableCell>ID</TableCell>
         <TableCell>Name</TableCell>
-        <TableCell>Subject</TableCell>
-        <TableCell>Schedule</TableCell>
+        {/* <TableCell>Subject</TableCell>
+        <TableCell>Schedule</TableCell> */}
+        <TableCell>Phone</TableCell>
+        <TableCell>EMAIL</TableCell>
       </TableRow>
     </TableHead>
   );
