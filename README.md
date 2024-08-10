@@ -41,4 +41,4 @@
 - 정우진 Login.tsx
 - 황승우 Register.tsx, Login.tsx, ChangingInfo.tsx
 
----
+![Footer](https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=footer)
