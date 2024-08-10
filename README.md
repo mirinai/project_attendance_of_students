@@ -2,7 +2,9 @@
 
 ---
 
-## [웹페이지 디자인](https://han.gl/Ix9b3)
+## 웹페이지 디자인
+
+#### https://han.gl/Ix9b3
 
 ---
 
@@ -18,12 +20,12 @@
 
 ## 역할분담
 
-#### > 임수경 Attendance.tsx, CourseContents.tsx
+#### - 임수경 Attendance.tsx, CourseContents.tsx
 
-#### > 양승언 Main.tsx
+#### - 양승언 Main.tsx
 
-#### > 정우진 Login.tsx
+#### - 정우진 Login.tsx
 
-#### > 황승우 Register.tsx, Login.tsx, ChangingInfo.tsx
+#### - 황승우 Register.tsx, Login.tsx, ChangingInfo.tsx
 
 ---
