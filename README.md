@@ -8,7 +8,6 @@
 
 - Front
 
-  
   <img src="https://img.shields.io/badge/react-61DAFB?style=flat-square&logo=react&logoColor=white" />
   <img src="https://img.shields.io/badge/tailwindcss-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" />
   <img src="https://img.shields.io/badge/mui-007FFF?style=flat-square&logo=mui&logoColor=white" />
@@ -16,13 +15,17 @@
 
 - Back
 
-  
   <img src="https://img.shields.io/badge/express-000000?style=flat-square&logo=express&logoColor=white" />
 
 - Database
 
-  
   <img src="https://img.shields.io/badge/mysql-4479A1?style=flat-square&logo=mysql&logoColor=white" />
+
+- Tools
+
+  <img src="https://img.shields.io/badge/dbeaver-382923?style=flat-square&logo=dbeaver&logoColor=white" />
+  <img src="https://img.shields.io/badge/postman-FF6C37?style=flat-square&logo=postman&logoColor=white" />
+  <img src="https://img.shields.io/badge/github-181717?style=flat-square&logo=github&logoColor=white" />
 
 ---
 
