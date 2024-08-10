@@ -19,7 +19,7 @@
   
   <img src="https://img.shields.io/badge/express-000000?style=flat-square&logo=express&logoColor=white" />
 
-- Database: MySQL
+- Database
 
   
   <img src="https://img.shields.io/badge/mysql-4479A1?style=flat-square&logo=mysql&logoColor=white" />
