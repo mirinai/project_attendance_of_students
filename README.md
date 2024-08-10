@@ -2,12 +2,6 @@
 
 ---
 
-## 웹페이지 디자인
-
-#### https://han.gl/Ix9b3
-
----
-
 ## 프로젝트 기술 스택
 
 #### [학원 수강생 출결 관리 프로그램]
@@ -15,6 +9,12 @@
 - Front: react + tailwind + mui + axios
 - Back: express.js
 - Database: MySQL
+
+---
+
+## 웹페이지 디자인
+
+#### https://han.gl/Ix9b3
 
 ---
 
