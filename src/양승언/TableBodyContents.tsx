@@ -10,6 +10,7 @@ type Tutors = {
   name: string;
   phone: string;
   email: string;
+  curriculum_id: number;
   // subjects: Subject[];
 };
 
@@ -27,6 +28,7 @@ const TableBodyContents = ({ tutors }: TableBodyContentsProps) => {
           <TableCell>{tutors.name}</TableCell>
           <TableCell>{tutors.phone}</TableCell>
           <TableCell>{tutors.email}</TableCell>
+          <TableCell>{tutors.curriculum_id}</TableCell>
           {/* {index === 0 && (
               <TableCell rowSpan={tutors.subjects.length}>
                 {tutors.id}

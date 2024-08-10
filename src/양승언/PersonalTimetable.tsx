@@ -19,6 +19,7 @@ type Tutors = {
   name: string;
   phone: string;
   email: string;
+  curriculum_id: number;
   // subjects: Subject[];
 };
 

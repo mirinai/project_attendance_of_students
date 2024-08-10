@@ -10,6 +10,7 @@ const TableHeader = () => {
         <TableCell>Schedule</TableCell> */}
         <TableCell>Phone</TableCell>
         <TableCell>EMAIL</TableCell>
+        <TableCell>CURRICULUM ID</TableCell>
       </TableRow>
     </TableHead>
   );

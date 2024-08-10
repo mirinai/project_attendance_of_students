@@ -16,6 +16,7 @@ const Main = () => {
           throw new Error("Network response was not ok");
         }
         const data = await response.json();
+        console.log("Fetched data:", data);
         setTutors(data);
       } catch (err) {
         console.log("Error fetching tutors:", err);
