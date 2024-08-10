@@ -1,5 +1,5 @@
 import { Outlet, useLocation } from "react-router-dom";
-import SideNav from "../organism/SideNav";
+import SideNav from "../molecules/SideNav";
 import Login from "../organism/Login";
 
 const Layout = () => {
