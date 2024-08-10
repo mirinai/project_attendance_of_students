@@ -30,7 +30,7 @@
 
 ## 웹페이지 디자인
 
-[로그인](https://file.notion.so/f/f/b50b2d01-abb1-4189-bf74-512febaadb7f/5f418b13-7617-4ed1-9869-904f247a4a5f/login_copy.jpg?table=block&id=02780d1d-729a-456b-89e1-1d79d18e2982&spaceId=b50b2d01-abb1-4189-bf74-512febaadb7f&expirationTimestamp=1723399200000&signature=lslnJlt2tDYcA3CTGvsi-yiX3801jqPXQ3EWdpBkGo8&downloadName=login+copy.jpg)
+![로그인](https://file.notion.so/f/f/b50b2d01-abb1-4189-bf74-512febaadb7f/5f418b13-7617-4ed1-9869-904f247a4a5f/login_copy.jpg?table=block&id=02780d1d-729a-456b-89e1-1d79d18e2982&spaceId=b50b2d01-abb1-4189-bf74-512febaadb7f&expirationTimestamp=1723399200000&signature=lslnJlt2tDYcA3CTGvsi-yiX3801jqPXQ3EWdpBkGo8&downloadName=login+copy.jpg)
 
 #### https://han.gl/Ix9b3
 
