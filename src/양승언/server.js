@@ -2,7 +2,10 @@ const express = require("express");
 const app = express();
 const mysql = require("mysql2/promise");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 app.use(bodyParser.json());
+app.use(cors()); // CORS 미들웨어를 추가하여 클라이언트에서의 요청 허용
+
 const port = 3000;
 
 app.listen(port);
@@ -41,12 +44,15 @@ const executeQuery = async (query, params = []) => {
 
 const getTutors = async () => await executeQuery(DATABASE.QUERY.TUTOR.FINDALL);
 
-app.get("/main/tutor", async (req, res) => {
+app.get("/api/tutor", async (req, res) => {
   res.json(await getTutors());
-  // try {
-  //   const tutors = await getTutors();
-  //   res.json(tutors);
-  // } catch (err) {
-  //   res.status(500).json({ error: "Failed to fetch tutors" });
-  // }
+  //   try {
+  //     const tutors = await getTutors();
+  //     res.json(tutors);
+  //   } catch (err) {
+  //     res.status(500).json({ error: "Failed to fetch tutors" });
+  //   }
 });
+// app.post("/main", (req, res) => {
+//   const {  } = req.body;
+// });

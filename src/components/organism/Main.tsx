@@ -2,8 +2,27 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
 import PersonalTimetable from "../../양승언/PersonalTimetable";
+import { useEffect, useState } from "react";
 
 const Main = () => {
+  const [tutors, setTutors] = useState([]);
+
+  useEffect(() => {
+    const fetchTutors = async () => {
+      try {
+        const response = await fetch("http://localhost:3000/api/tutor"); //API 불러오기
+
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        setTutors(data);
+      } catch (err) {
+        console.log("Error fetching tutors:", err);
+      }
+    };
+    fetchTutors();
+  }, []);
   // const students = [
   //   {
   //     id: 1,
@@ -31,14 +50,14 @@ const Main = () => {
   //   },
   // ];
 
-  const tutors = [
-    {
-      id: 1,
-      name: "abcdd",
-      phone: "010-1234-5678",
-      email: "abcd@gmail.com",
-    },
-  ];
+  // const tutors = [
+  //   {
+  //     id: 1,
+  //     name: "abcdd",
+  //     phone: "010-1234-5678",
+  //     email: "abcd@gmail.com",
+  //   },
+  // ];
   return (
     <div className="flex w-full">
       <div className="flex items-center justify-center w-full h-full">
