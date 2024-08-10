@@ -29,13 +29,22 @@
 ---
 
 ## 웹페이지 디자인
-### [노션](https://han.gl/Ix9b3)
+### [노션링크](https://han.gl/Ix9b3)
 
 로그인 페이지 - Login.tsx
 ![이미지](https://file.notion.so/f/f/b50b2d01-abb1-4189-bf74-512febaadb7f/5f418b13-7617-4ed1-9869-904f247a4a5f/login_copy.jpg?table=block&id=02780d1d-729a-456b-89e1-1d79d18e2982&spaceId=b50b2d01-abb1-4189-bf74-512febaadb7f&expirationTimestamp=1723399200000&signature=lslnJlt2tDYcA3CTGvsi-yiX3801jqPXQ3EWdpBkGo8&downloadName=login+copy.jpg)
 
 메인 페이지 - Main.tsx
 ![이미지](https://file.notion.so/f/f/b50b2d01-abb1-4189-bf74-512febaadb7f/4acbb924-8228-4177-a280-22760ee23edd/MAIN_copy.jpg?table=block&id=e91663f4-0bf8-496e-ae25-06985694bca9&spaceId=b50b2d01-abb1-4189-bf74-512febaadb7f&expirationTimestamp=1723399200000&signature=ADN5XXLaFDtOeyj0XCzdgszqWt_xNDP0lcgOzmseLNA&downloadName=MAIN+copy.jpg)
+
+수강생 등록 페이지 - Register.tsx
+![이미지](https://file.notion.so/f/f/b50b2d01-abb1-4189-bf74-512febaadb7f/fb0e6567-ff36-4a79-a1d5-de2d3d3b7d27/register_copy.jpg?table=block&id=5ec966eb-049a-4ed5-aba0-fa3899ff0aa4&spaceId=b50b2d01-abb1-4189-bf74-512febaadb7f&expirationTimestamp=1723399200000&signature=BMQjS75E-CeB_M3UGOYe7t_JiDY8GYDaLldDVJ3nXjU&downloadName=register+copy.jpg)
+
+각 수업별 페이지 - CourseContents.tsx
+![이미지](https://file.notion.so/f/f/b50b2d01-abb1-4189-bf74-512febaadb7f/18499da8-7138-443c-ac5b-7a964cbf1116/course_copy.jpg?table=block&id=15ebe809-3fa0-4688-a10d-1de7dbcac423&spaceId=b50b2d01-abb1-4189-bf74-512febaadb7f&expirationTimestamp=1723399200000&signature=KW69TZ2U5Jyg4IeRlquCQeLDI7sQFyAC6kYTNMrdsrI&downloadName=course+copy.jpg)
+
+출석부 페이지 - Attendance.tsx
+![이미지](https://file.notion.so/f/f/b50b2d01-abb1-4189-bf74-512febaadb7f/cca61ee2-635e-4a25-bd38-c7d1f12131ab/att_copy.jpg?table=block&id=71225a50-39e5-407d-acfd-7434de290f1e&spaceId=b50b2d01-abb1-4189-bf74-512febaadb7f&expirationTimestamp=1723399200000&signature=waN7WAQhVd9mQS3cscF8I6mc0xn_tVrVA7JkLR2dIt0&downloadName=att+copy.jpg)
 
 
 ---
