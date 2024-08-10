@@ -2,7 +2,7 @@ import { Button, ButtonGroup } from "@mui/material";
 import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
 import Box from "@mui/material/Box";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export type StudentProps = {
   id?: number;
@@ -20,6 +20,20 @@ const Attendance = () => {
     attendance: "출석",
     memo: "+",
   });
+
+  const [student, setStudent] = useState([]);
+
+  useEffect(() => {
+    const fetchStu = async () => {
+      try {
+        const res = await fetch("http://localhost:3001/api/student");
+        setStudent(await res.json());
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchStu();
+  }, []);
 
   const handleMemo = () => prompt("메모추가");
   const handleAtt = (v: string) => alert(`${v} 클릭`);
