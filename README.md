@@ -15,9 +15,13 @@
   <img src="https://img.shields.io/badge/axios-5A29E4?style=flat-square&logo=axios&logoColor=white" />
 
 - Back
+
+  
   <img src="https://img.shields.io/badge/express-000000?style=flat-square&logo=express&logoColor=white" />
 
 - Database: MySQL
+
+  
   <img src="https://img.shields.io/badge/mysql-4479A1?style=flat-square&logo=mysql&logoColor=white" />
 
 ---
