@@ -30,11 +30,20 @@ const Main = () => {
   //     ],
   //   },
   // ];
+
+  const tutors = [
+    {
+      id: 1,
+      name: "abcdd",
+      phone: "010-1234-5678",
+      email: "abcd@gmail.com",
+    },
+  ];
   return (
     <div className="flex w-full">
       <div className="flex items-center justify-center w-full h-full">
         <div className="flex flex-col w-full p-2">
-          <PersonalTimetable tutors={} />
+          <PersonalTimetable tutors={tutors} />
         </div>
       </div>
       <div className="p-1 w-fit h-fit">

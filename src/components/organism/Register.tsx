@@ -25,20 +25,29 @@ export const Register = () => {
   };
 
   const clickRegister = () => {
-    fetch("http://localhost:3001/student/register", {
-      method: "post",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(addStu),
-    })
-      .then((v) => v.json())
-      .then(() => {
-        alert("등록완료");
-        console.log("등록완료 알럿직후");
-      });
-
-    console.log(JSON.stringify(addStu));
+    if (
+      addStu.some(
+        (v) =>
+          !v.student_name ||
+          !v.student_email ||
+          !v.student_phone ||
+          !v.course_id
+      )
+    ) {
+      alert("학생을 등록하지 못했습니다. 등록란에 올바르게 작성해주세요.");
+    } else {
+      fetch("http://localhost:3001/student/register", {
+        method: "post",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(addStu),
+      })
+        .then((v) => v.json())
+        .then(() => {
+          alert("등록완료");
+        });
+    }
   };
 
   const registerButton = () => {
@@ -47,7 +56,8 @@ export const Register = () => {
       student_name: "",
       student_email: "",
       student_phone: "",
-      course_id: undefined,
+      course_id: "",
+      course_name: "",
     };
     setStu((prev) => {
       const updatedStu = [...prev, newStu];
@@ -66,15 +76,15 @@ export const Register = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center w-full h-full gap-10">
-      <div className="text-center text-7xl">학생 등록 페이지</div>
+    <div className="w-full h-full flex flex-col gap-10 justify-center items-center">
+      <div className="text-7xl text-center">학생 등록 페이지</div>
       <div>
         <Button variant="contained" onClick={clickRegister}>
           등록하기
         </Button>
       </div>
       <div className="w-5/6">
-        <table className="w-full border">
+        <table className="border w-full">
           <thead>
             <tr>
               <th>
