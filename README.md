@@ -1,9 +1,9 @@
-![header](https://capsule-render.vercel.app/api?type=soft&color=auto&height=100&section=header&text=Student%Management%System&fontSize=40)
+![header](https://capsule-render.vercel.app/api?type=soft&color=auto&height=100&section=header&text=Student%20Management%20System&fontSize=40)
 
 
 ## 프로젝트 기술 스택
 
-#### [학원 수강생 출결 관리 프로그램]
+### [학원 수강생 출결 관리 프로그램]
 
 - Front
 
