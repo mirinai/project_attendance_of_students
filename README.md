@@ -4,7 +4,7 @@
 
 ## 웹페이지 디자인
 
-#### https://water-purpose-040.notion.site/9e745135a76148269223b645ab491d7d?pvs=4
+#### https://han.gl/Ix9b3
 
 ---
 
