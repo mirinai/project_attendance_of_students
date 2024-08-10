@@ -1,6 +1,6 @@
 import { Slider } from "@mui/material";
 import { useEffect, useState } from "react";
-import CourseStudent from "../../LSG/CourseStudent";
+import CourseStudent from "../atom/CourseStudent";
 
 type ClassContentsProps = {
   name?: string;
@@ -10,7 +10,6 @@ type ClassContentsProps = {
 };
 
 const ClassContents = () => {
-  const handleDelete = () => alert("삭제");
   const [student, setStudent] = useState([]);
 
   useEffect(() => {
@@ -61,17 +60,8 @@ const ClassContents = () => {
         출석부 이동
       </a>
 
-      <div className="text-3xl text-center mb-5">수강한 학생 정보</div>
-
+      <div className="text-3xl text-center mb-5">수강생 정보</div>
       <CourseStudent student={student} />
-
-      {/* <table className="w-full max-w-3xl h-fit px-28 py-10">
-        <tr className="w-full my-4 border-b grid grid-cols-3 justify-items-center">
-          <th>학생번호</th>
-          <th>학생이름</th>
-          <th>전화번호</th>
-        </tr>
-      </table> */}
     </div>
   );
 };

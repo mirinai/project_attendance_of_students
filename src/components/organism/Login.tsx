@@ -6,10 +6,8 @@ const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 const Login = () => {
   const navigate = useNavigate();
+  const handleClick = () => navigate("/main");
 
-  function handleClick() {
-    navigate("/main");
-  }
   return (
     <div className="w-screen h-screen flex justify-center items-center">
       <div className="flex justify-center items-center flex-col gap-3">
