@@ -42,5 +42,6 @@
 - 황승우 Register.tsx, Login.tsx, ChangingInfo.tsx
 
 
-  [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=sukyeng97)](https://github.com/sukyeng97/github-readme-stats)
+---
+
 
