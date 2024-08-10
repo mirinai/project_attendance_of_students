@@ -3,7 +3,6 @@ import StudentList from "../../LSG/StudentList";
 
 const Attendance = () => {
   const [student, setStudent] = useState([]);
-
   useEffect(() => {
     const fetchStu = async () => {
       try {
