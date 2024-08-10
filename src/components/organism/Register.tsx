@@ -46,10 +46,7 @@ export const Register = () => {
         .then((v) => v.json())
         .then(() => {
           alert("등록완료");
-          console.log("등록완료 알럿직후");
         });
-
-      console.log(JSON.stringify(addStu));
     }
   };
 
