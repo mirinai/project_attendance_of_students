@@ -11,7 +11,7 @@ const DATABASE = {
     host: "localhost",
     user: "root",
     password: "1111",
-    database: "std_check",
+    database: "tutors",
   },
 
   QUERY: {
