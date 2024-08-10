@@ -6,6 +6,8 @@
 
 #### [학원 수강생 출결 관리 프로그램]
 
+<img src="https://img.shields.io/badge/react-61DAFB?style=flat-square&logo=react&logoColor=white"/>
+
 - Front: react + tailwind + mui + axios
 - Back: express.js
 - Database: MySQL
