@@ -42,5 +42,11 @@ const executeQuery = async (query, params = []) => {
 const getTutors = async () => await executeQuery(DATABASE.QUERY.TUTOR.FINDALL);
 
 app.get("/main/tutor", async (req, res) => {
-  res.json(getTutors());
+  res.json(await getTutors());
+  // try {
+  //   const tutors = await getTutors();
+  //   res.json(tutors);
+  // } catch (err) {
+  //   res.status(500).json({ error: "Failed to fetch tutors" });
+  // }
 });
