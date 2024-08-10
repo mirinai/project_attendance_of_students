@@ -20,12 +20,9 @@
 
 ## 역할분담
 
-#### - 임수경 Attendance.tsx, CourseContents.tsx
-
-#### - 양승언 Main.tsx
-
-#### - 정우진 Login.tsx
-
-#### - 황승우 Register.tsx, Login.tsx, ChangingInfo.tsx
+- 임수경 Attendance.tsx, CourseContents.tsx
+- 양승언 Main.tsx
+- 정우진 Login.tsx
+- 황승우 Register.tsx, Login.tsx, ChangingInfo.tsx
 
 ---
