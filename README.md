@@ -1,4 +1,8 @@
 ![header](https://capsule-render.vercel.app/api?type=soft&color=auto&height=100&section=header&text=Student%20Management%20System&fontSize=40)
+<<<<<<< HEAD
+=======
+
+> > > > > > > ab1f90b0962cf1f04e1a61c1b139dcd0527675ae
 
 ## 프로젝트 기술 스택
 
