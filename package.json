@@ -32,8 +32,13 @@
   },
   "proxy": "http://localhost:3000",
   "scripts": {
+<<<<<<< HEAD
+    "start": "react-scripts --max-http-header-size=1024 start",
+    "build": "react-scripts build",
+=======
     "start": "react-scripts start",
     "build": "CI=false react-scripts build",
+>>>>>>> b4874a08dfbcb59295d78fd66d36958982858bad
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
