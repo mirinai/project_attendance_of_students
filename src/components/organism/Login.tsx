@@ -3,26 +3,18 @@ import LockOpenIcon from "@mui/icons-material/LockOpen";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
-<<<<<<< HEAD
-=======
 
 export type LoginProps = {
   tutor_email?: string;
   tutor_password?: string;
 };
->>>>>>> 5aae499cc14707a761c300195fa07f9a5d2b5f0b
 
 const Login = ({ tutor_email, tutor_password }: LoginProps) => {
   const navigate = useNavigate();
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
 
-<<<<<<< HEAD
-  const handleClick = () => navigate("/main");
-  const handleLogin = () => {
-    const userData = [{ tutor_email: id, tutor_password: password }];
 
-=======
   const handleClick = async () => {
     console.log("1212");
     await axios
@@ -41,7 +33,6 @@ const Login = ({ tutor_email, tutor_password }: LoginProps) => {
     const userData = { tutor_email: id, tutor_password: password };
 
     console.log("12414");
->>>>>>> 5aae499cc14707a761c300195fa07f9a5d2b5f0b
     fetch("http://localhost:3001/tutor/login", {
       method: "POST",
       headers: {
