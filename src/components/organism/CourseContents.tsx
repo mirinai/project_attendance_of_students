@@ -2,13 +2,6 @@ import { Slider } from "@mui/material";
 import { useEffect, useState } from "react";
 import CourseStudent from "../atom/CourseStudent";
 
-type ClassContentsProps = {
-  name?: string;
-  gender?: "Mail" | "Femail";
-  studentAttendance?: number;
-  classTotal?: number;
-};
-
 const ClassContents = () => {
   const [student, setStudent] = useState([]);
 
