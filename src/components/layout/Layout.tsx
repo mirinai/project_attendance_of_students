@@ -18,8 +18,6 @@ const Layout = () => {
           <Outlet />
         </div>
       )}
-      {/*  <SideNav>
-      <Outlet> */}
     </div>
   );
 };

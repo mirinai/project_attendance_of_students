@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import StudentList from "../../LSG/StudentList";
+import { today } from "../../util/date";
 
 const Attendance = () => {
   const [student, setStudent] = useState([]);
@@ -14,8 +15,6 @@ const Attendance = () => {
     };
     fetchStu();
   }, []);
-
-  const today = `${new Date().getMonth() + 1}월 ${new Date().getDate()}일`;
 
   return (
     <div className="w-full h-full py-10 flex flex-col gap-10 items-center">
