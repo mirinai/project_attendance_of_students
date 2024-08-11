@@ -35,7 +35,6 @@ const ClassContents = () => {
             aria-label="수업횟수"
           />
         </div>
-
         {/* 출석률 */}
         <div className="w-96 h-fit p-5 bg-slate-100">
           <div className="my-3 flex justify-between items-end">

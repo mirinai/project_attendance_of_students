@@ -1,4 +1,3 @@
-import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
 import { TableBody, TableRow, TableCell } from "@mui/material";
 
 export type CourseStudentList = {
