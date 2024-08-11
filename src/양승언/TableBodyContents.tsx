@@ -6,10 +6,11 @@ import { TableBody, TableRow, TableCell } from "@mui/material";
 // };
 
 type Tutors = {
-  id: number;
-  name: string;
-  phone: string;
-  email: string;
+  tutor_id: number;
+  tutor_name: string;
+  tutor_phone: string;
+  tutor_email: string;
+  curriculum_id: number;
   // subjects: Subject[];
 };
 
@@ -23,10 +24,11 @@ const TableBodyContents = ({ tutors }: TableBodyContentsProps) => {
       {tutors.map((tutors) => (
         // tutors.subjects.map((subject, index) => (
         <TableRow>
-          <TableCell>{tutors.id}</TableCell>
-          <TableCell>{tutors.name}</TableCell>
-          <TableCell>{tutors.phone}</TableCell>
-          <TableCell>{tutors.email}</TableCell>
+          <TableCell>{tutors.tutor_id}</TableCell>
+          <TableCell>{tutors.tutor_name}</TableCell>
+          <TableCell>{tutors.tutor_phone}</TableCell>
+          <TableCell>{tutors.tutor_email}</TableCell>
+          <TableCell>{tutors.curriculum_id}</TableCell>
           {/* {index === 0 && (
               <TableCell rowSpan={tutors.subjects.length}>
                 {tutors.id}

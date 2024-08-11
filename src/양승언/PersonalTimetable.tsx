@@ -15,10 +15,11 @@ import TableBodyContents from "./TableBodyContents";
 // };
 
 type Tutors = {
-  id: number;
-  name: string;
-  phone: string;
-  email: string;
+  tutor_id: number;
+  tutor_name: string;
+  tutor_phone: string;
+  tutor_email: string;
+  curriculum_id: number;
   // subjects: Subject[];
 };
 

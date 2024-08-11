@@ -1,20 +1,21 @@
 import { Slider } from "@mui/material";
-import DeleteIcon from "@mui/icons-material/Delete";
+import { useEffect, useState } from "react";
+import CourseStudent from "../atom/CourseStudent";
 
-type ClassContentsProps = {
-  name?: string;
-  gender?: "Mail" | "Femail";
-  studentAttendance?: number;
-  classTotal?: number;
-};
+const ClassContents = () => {
+  const [student, setStudent] = useState([]);
 
-const ClassContents = ({
-  name = "OOO",
-  gender = "Mail",
-  studentAttendance = 1,
-  classTotal = 10,
-}: ClassContentsProps) => {
-  const handleDelete = () => alert("삭제");
+  useEffect(() => {
+    const fetchStu = async () => {
+      try {
+        const data = await fetch("http://localhost:3001/api/student");
+        setStudent(await data.json());
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchStu();
+  }, []);
 
   return (
     <div className="flex flex-col items-center">
@@ -49,29 +50,11 @@ const ClassContents = ({
         href="/attendance"
         className="w-fit h-fit px-8 py-2 my-10 bg-violet-400"
       >
-        출석부
+        출석부 이동
       </a>
 
-      <div className="text-3xl text-center mb-5">수강한 학생 정보</div>
-      <table className="w-full max-w-3xl h-fit px-28 py-10">
-        <tr className="w-full my-4 border-b grid grid-cols-4 justify-items-center">
-          <th>이름</th>
-          <th>성별</th>
-          <th>출석률</th>
-          <th>삭제</th>
-        </tr>
-
-        <tr className="w-full my-4 border-b grid grid-cols-4 justify-items-center">
-          <td>{name}</td>
-          <td>{gender}</td>
-          <td>
-            {studentAttendance} / {classTotal}
-          </td>
-          <td className="hover:cursor-pointer" onClick={handleDelete}>
-            <DeleteIcon />
-          </td>
-        </tr>
-      </table>
+      <div className="text-3xl text-center mb-5">수강생 정보</div>
+      <CourseStudent student={student} />
     </div>
   );
 };

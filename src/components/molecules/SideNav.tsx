@@ -12,8 +12,6 @@ const SideNav = () => {
 
       <div className="flex flex-col gap-5">
         <a href="/classcontent">수업1</a>
-        <a href="/classcontent">수업2</a>
-        <a href="/classcontent">수업3</a>
       </div>
     </div>
   );
