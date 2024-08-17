@@ -14,7 +14,7 @@ const DATABASE = {
     host: "localhost",
     user: "root",
     password: "1111",
-    database: "student_attendance",
+    database: "attendance",
   },
 
   QUERY: {
